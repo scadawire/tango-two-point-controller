@@ -108,9 +108,9 @@ class TwoPointController(Device, metaclass=DeviceMeta):
         print("difference: " + str(difference))
         
         # Calculate control signal by using simple compare of current value
-        newActorValue = ActorOffValue
+        newActorValue = self.ActorOffValue
         if(sensorValue > self.__sensorValueTarget)
-            newActorValue = ActorOffValue
+            newActorValue = self.ActorOffValue
 
         if(actorValue != newActorValue):
             self.__lastChanged = time.time()
