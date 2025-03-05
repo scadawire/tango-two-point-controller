@@ -109,7 +109,7 @@ class TwoPointController(Device, metaclass=DeviceMeta):
         
         # Calculate control signal by using simple compare of current value
         newActorValue = self.ActorOffValue
-        if(sensorValue > self.__sensorValueTarget):
+        if(difference > 0):
             newActorValue = self.ActorOnValue
 
         if(actorValue != newActorValue):
