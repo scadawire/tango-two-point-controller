@@ -65,7 +65,10 @@ class TwoPointController(Device, metaclass=DeviceMeta):
     @command()
     def regulateLoop(self):
         while(1):
-            self.regulate()
+            try:
+                self.regulate()
+            except Exception as e:
+                print("regulate error: " + str(e))
             time.sleep(self.regulateInterval)
 
     def getSensorValueFloat(self):
